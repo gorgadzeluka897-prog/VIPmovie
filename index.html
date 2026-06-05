@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VIPmovie</title>
 
-</form>   
 <style>
 body{
     margin:0;
@@ -20,6 +19,29 @@ header{
     padding:20px;
     font-size:32px;
     font-weight:bold;
+}
+
+.search-container{
+    display:flex;
+    justify-content:center;
+    padding:20px;
+}
+
+.search-container input{
+    width:90%;
+    max-width:500px;
+    padding:15px 20px;
+    border:none;
+    border-radius:30px;
+    background:#222;
+    color:white;
+    font-size:16px;
+    outline:none;
+    box-shadow:0 0 10px rgba(229,9,20,.4);
+}
+
+.search-container input:focus{
+    box-shadow:0 0 20px rgba(229,9,20,.8);
 }
 
 .movies{
@@ -65,6 +87,11 @@ header{
     background:#e50914;
     color:white;
     cursor:pointer;
+    transition:0.3s;
+}
+
+.movie button:hover{
+    background:#ff1f1f;
 }
 </style>
 </head>
@@ -73,37 +100,59 @@ header{
 
 <header>🎬 VIPmovie</header>
 
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="🎬 მოძებნე ფილმი...">
+</div>
+
 <div class="movies">
 
-<div class="movie">
-<img src="https://img.mykadri.click/uploads/posts/2026-03/medium/ngh4uvgexqbjdanb2ruzyt9hpwd.jpg"> ტკბილი ოცნება</h2>
-<p>მოქმედებითი ფილმი</p>
-<a href="https://mykadri.tv/10854-tkbili-ocneba-la-belle-toile.html" target="_blank">
-<button>ფილმის ყურება</button>
-</a>
+    <div class="movie">
+        <img src="https://img.mykadri.click/uploads/posts/2026-03/medium/ngh4uvgexqbjdanb2ruzyt9hpwd.jpg">
+        <h2>ტკბილი ოცნება</h2>
+        <p>მოქმედებითი ფილმი</p>
+        <a href="https://mykadri.tv/10854-tkbili-ocneba-la-belle-toile.html" target="_blank">
+            <button>ფილმის ყურება</button>
+        </a>
+    </div>
+
+    <div class="movie">
+        <img src="https://img.mykadri.click/uploads/posts/2020-03/1584534942_18133513zdbrm1v7.jpg">
+        <h2>სკუბი დუბი დუუ</h2>
+        <p>ფანტასტიკა</p>
+        <a href="https://mykadri.tv/318-scooby-doo.html" target="_blank">
+            <button>ფილმის ყურება</button>
+        </a>
+    </div>
+
+    <div class="movie">
+        <img src="https://img.mykadri.click/uploads/posts/2024-11/medium/5wvxsmjwgszbyquq8i5yqbfxbpj.jpg">
+        <h2>ფლაბერი</h2>
+        <p>კომედია</p>
+        <a href="https://mykadri.tv/859-flubber.html" target="_blank">
+            <button>ფილმის ყურება</button>
+        </a>
+    </div>
+
 </div>
 
-<div class="movie">
-<img src="https://img.mykadri.click/uploads/posts/2020-03/1584534942_18133513zdbrm1v7.jpg">
-<h2>სკუბი დუბი დუუუ</h2>
-<p>ფანტასტიკა</p>
-<a href="https://mykadri.tv/318-scooby-doo.html" target="_blank">
-<button>ფილმის ყურება</button>
-</a>
-</div>
+<script>
+const searchInput = document.getElementById('searchInput');
 
-<div class="movie">
-<img src="https://img.mykadri.click/uploads/posts/2024-11/medium/5wvxsmjwgszbyquq8i5yqbfxbpj.jpg">
-<h2>ფლაბერი/<h2>
-<p>რბოლები და ექშენი</p>
-<a href="https://mykadri.tv/859-flubber.html" target="_blank">
-<button>ფილმის ყურება</button>
-</a>
-</div>
+searchInput.addEventListener('keyup', function() {
+    const filter = this.value.toLowerCase();
+    const movies = document.querySelectorAll('.movie');
 
-</div\>
-  
-</div>
+    movies.forEach(movie => {
+        const title = movie.querySelector('h2').textContent.toLowerCase();
+
+        if(title.includes(filter)){
+            movie.style.display = 'block';
+        } else {
+            movie.style.display = 'none';
+        }
+    });
+});
+</script>
+
 </body>
 </html>
- 
