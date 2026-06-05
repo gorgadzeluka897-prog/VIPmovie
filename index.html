@@ -46,18 +46,33 @@ header{
 
 .movies{
     display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
+    overflow-x:auto;
     gap:20px;
     padding:20px;
+    scroll-behavior:smooth;
+}
+
+.movies::-webkit-scrollbar{
+    height:8px;
+}
+
+.movies::-webkit-scrollbar-thumb{
+    background:#e50914;
+    border-radius:10px;
 }
 
 .movie{
+    min-width:220px;
+    flex-shrink:0;
     background:#222;
-    width:220px;
     border-radius:10px;
     overflow:hidden;
     text-align:center;
+    transition:0.3s;
+}
+
+.movie:hover{
+    transform:scale(1.05);
 }
 
 .movie img{
@@ -117,7 +132,7 @@ header{
 
     <div class="movie">
         <img src="https://img.mykadri.click/uploads/posts/2020-03/1584534942_18133513zdbrm1v7.jpg">
-        <h2>სკუბი დუბი დუუ</h2>
+        <h2>სკუბი დუბი დუ</h2>
         <p>ფანტასტიკა</p>
         <a href="https://mykadri.tv/318-scooby-doo.html" target="_blank">
             <button>ფილმის ყურება</button>
@@ -146,7 +161,7 @@ searchInput.addEventListener('keyup', function() {
         const title = movie.querySelector('h2').textContent.toLowerCase();
 
         if(title.includes(filter)){
-            movie.style.display = 'block';
+            movie.style.display = '';
         } else {
             movie.style.display = 'none';
         }
