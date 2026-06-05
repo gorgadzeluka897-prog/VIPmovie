@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIPmovie</title>
+
+<style>
+body{
+    margin:0;
+    background:#111;
+    color:white;
+    font-family:Arial,sans-serif;
+}
+
+header{
+    background:#e50914;
+    text-align:center;
+    padding:20px;
+    font-size:32px;
+    font-weight:bold;
+}
+
+.movies{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    padding:20px;
+}
+
+.movie{
+    background:#222;
+    width:220px;
+    border-radius:10px;
+    overflow:hidden;
+    text-align:center;
+}
+
+.movie img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+}
+
+.movie h2{
+    font-size:18px;
+    padding:10px;
+}
+
+.movie p{
+    padding:0 10px;
+}
+
+.movie a{
+    text-decoration:none;
+}
+
+.movie button{
+    margin:15px;
+    padding:10px 20px;
+    border:none;
+    border-radius:5px;
+    background:#e50914;
+    color:white;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>🎬 VIPmovie</header>
+
+<div class="movies">
+
+<div class="movie">
+<img src="images/johnwick.jpg">
+<h2>John Wick 4</h2>
+<p>მოქმედებითი ფილმი</p>
+<a href="https://example.com/movie1" target="_blank">
+<button>ფილმის ყურება</button>
+</a>
+</div>
+
+<div class="movie">
+<img src="images/avatar2.jpg">
+<h2>Avatar 2</h2>
+<p>ფანტასტიკა</p>
+<a href="https://example.com/movie2" target="_blank">
+<button>ფილმის ყურება</button>
+</a>
+</div>
+
+<div class="movie">
+<img src="images/fastx.jpg">
+<h2>Fast X</h2>
+<p>რბოლები და ექშენი</p>
+<a href="https://example.com/movie3" target="_blank">
+<button>ფილმის ყურება</button>
+</a>
+</div>
+
+</div>
+
+</body>
+</html>
